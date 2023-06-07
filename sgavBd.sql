@@ -8,8 +8,8 @@ CREATE TABLE countries(
  name_country varchar(50) NOT NULL,
  id_city int(11),
  CONSTRAINT pk_countries PRIMARY KEY(id_country),
- CONSTRAINT fk_countriesRegion FOREIGN 0
- KEY (id_city)REFERENCES pais(id_city)
+ CONSTRAINT fk_countriesRegion FOREIGN 
+ KEY (id_city)REFERENCES cities(id_city)
 
  );
 CREATE TABLE regions(
@@ -26,18 +26,11 @@ CREATE TABLE persons(
     id_person varchar(15),
     fistname_person varchar(25),
     lastname_person varchar(25),
-    birthdate_person date(25),
-    id_city int NOT NULL AUTO INCREMENT
+    birthdate_person date,
+    id_city int NOT NULL AUTO_INCREMENT,
     CONSTRAINT pk_persons PRIMARY KEY (id_person),
-    CONSTRAInT fk_personCity FOREIGN KEY (id_city) REFERENCES pais
-    
-
-
+    CONSTRAINT fk_personCity FOREIGN KEY (id_city) REFERENCES cities(id_city)
 );
-
-
- 
- 
 
 
 
@@ -59,6 +52,12 @@ CREATE TABLE living_place(
     CONSTRAINT fk_cityregions FOREIGN 0 KEY (id_city)REFERENCES city(id_city)
     
 ):
+
+
+ 
+ 
+
+
 
 
 
