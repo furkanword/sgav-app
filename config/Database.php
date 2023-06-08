@@ -1,13 +1,14 @@
 <?php
-    namespace Conf;
-    class connectionString{
-        public $db = array(
+    namespace App;
+    class Database{
+        private $conn;
+        protected static = array(
             "mysql"=> Array(
                 'driver' => 'mysql',
                 'host' => 'localhost',
                 'username' => 'root',
-                'database' => 'mitienda',
-                'password' => '123456',
+                'database' => 'sgavBd',
+                'password' => 'campus2023',
                 'collation' => 'utf8mb4_unicode_ci',
                 'flags' => [
                     // Turn off persistent connections
