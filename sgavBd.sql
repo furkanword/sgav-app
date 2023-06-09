@@ -32,7 +32,12 @@ CREATE TABLE persons(
     CONSTRAINT fk_personCity FOREIGN KEY (id_city) REFERENCES cities(id_city)
 );
 
-
+CREATE TABLE housetype(
+    id_hausetype INT NOT NULL AUTO_INCREMENT,
+    name_hausetype VARCHAR(50),
+    CONSTRAINT pk_housetype PRIMARY KEY (id_hausetype),
+    CONSTRAINT uk_housetype_name UNIQUE (name_hausetype)
+);
 
 
 CREATE TABLE living_place(
@@ -56,12 +61,7 @@ CREATE TABLE living_place(
 
  
  
-CREATE TABLE housetype(
-    id_hausetype INT NOT NULL AUTO_INCREMENT,
-    name_hausetype VARCHAR(50),
-    CONSTRAINT pk_housetype PRIMARY KEY (id_hausetype),
-    CONSTRAINT uk_housetype_name UNIQUE (name_hausetype)
-);
+
 
 CREATE TABLE cities (
     id_city SERIAL PRIMARY KEY,
